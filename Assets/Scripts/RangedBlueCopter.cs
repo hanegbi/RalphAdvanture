@@ -12,6 +12,7 @@ public class RangedBlueCopter : Enemy
     float attackTime;
     Animator anim;
 
+
     public override void Start()
     {
         base.Start();

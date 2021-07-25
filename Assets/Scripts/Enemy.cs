@@ -20,13 +20,14 @@ public class Enemy : MonoBehaviour
     public GameObject healthPickup;
 
     public GameObject deathEffect;
+    public GameObject deathSound;
 
     public virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount)
     {
         health -= amount;
         if (health <= 0)
@@ -38,13 +39,14 @@ public class Enemy : MonoBehaviour
                 Instantiate(randomPickup, transform.position, transform.rotation);
             }
 
-            //int randHealth = Random.Range(0, 101);
-            //if (randHealth < healthPickupChance)
-            //{
-            //    Instantiate(healthPickup, transform.position, transform.rotation);
-            //}
+            int randHealth = Random.Range(0, 101);
+            if (randHealth < healthPickupChance)
+            {
+                Instantiate(healthPickup, transform.position, transform.rotation);
+            }
 
-            //Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Instantiate(deathSound, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }

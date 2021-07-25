@@ -22,8 +22,10 @@ public class Player : MonoBehaviour
 
     public Animator hurtAnim;
 
-    //private SceneTransition sceneTransitions;
+    private TransitionScene transitionScene;
+
     public GameObject hurtSound;
+    public GameObject dieSound;
 
     public GameObject trail;
     private float timeBtwTrail;
@@ -34,9 +36,7 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        //sceneTransitions = FindObjectOfType<SceneTransition>();
-
-
+        transitionScene = FindObjectOfType<TransitionScene>();
     }
 
     private void Update()
@@ -70,14 +70,15 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        //Instantiate(hurtSound, transform.position, Quaternion.identity);
+        Instantiate(hurtSound, transform.position, Quaternion.identity);
         health -= amount;
         UpdateHealthUI(health);
-        //hurtAnim.SetTrigger("hurt");
+        hurtAnim.SetTrigger("hurt");
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            //sceneTransitions.LoadScene("Lose");
+            Instantiate(dieSound, transform.position, Quaternion.identity);
+            transitionScene.LoadScene("Lose");
         }
     }
 

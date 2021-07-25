@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5130078212459733945}
   - component: {fileID: 7060390952189447656}
-  - component: {fileID: 1319240345129821185}
   - component: {fileID: 969660362296343997}
+  - component: {fileID: 1319240345129821185}
   - component: {fileID: 2506351579848118927}
   - component: {fileID: 2679444722961814282}
   m_Layer: 9
@@ -86,6 +86,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &969660362296343997
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187523871954085187}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &1319240345129821185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,27 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!50 &969660362296343997
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4187523871954085187}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!95 &2506351579848118927
 Animator:
   serializedVersion: 3
@@ -175,6 +175,7 @@ MonoBehaviour:
   - {fileID: 4841111254345865029, guid: 24765eaf3743b7d408d2cfbc23b15e96, type: 3}
   healthPickupChance: 10
   healthPickup: {fileID: 4841111254345865029, guid: 24765eaf3743b7d408d2cfbc23b15e96, type: 3}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 2668783037160578216, guid: 710daffebba296744835a328f7b40dc6, type: 3}
+  deathSound: {fileID: 992154686272190209, guid: 6c2f765c12222e44d9cf9b025012a165, type: 3}
   stopDistance: 8
   attackSpeed: 2

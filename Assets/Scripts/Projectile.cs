@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
 
     public GameObject explosion;
 
-    //public GameObject soundObject;
+    public GameObject soundObject;
 
     //public GameObject trail;
     //private float timeBtwTrail;
@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
-        //Instantiate(soundObject, transform.position, transform.rotation);
+        Instantiate(soundObject, transform.position, transform.rotation);
         //Instantiate(explosion, transform.position, Quaternion.identity);
     }
 
@@ -48,6 +48,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.tag == "Enemy")
         {
             other.GetComponent<Enemy>().TakeDamage(damage);

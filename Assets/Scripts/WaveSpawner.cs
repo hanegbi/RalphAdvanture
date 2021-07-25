@@ -18,6 +18,8 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public float timeBetweenWaves;
 
+    private TransitionScene transitionScene;
+
     private Wave currentWave;
     private int currentWaveIndex;
     private Transform player;
@@ -34,6 +36,8 @@ public class WaveSpawner : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         StartCoroutine(StartNextWave(currentWaveIndex));
+        transitionScene = FindObjectOfType<TransitionScene>();
+
     }
 
 
@@ -85,7 +89,9 @@ public class WaveSpawner : MonoBehaviour
             }
             else
             {
-                Debug.Log("Finisgh game");
+                Debug.Log("Finish game");
+                transitionScene.LoadScene("Win");
+
                 //Instantiate(boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
                 //healthBar.SetActive(true);
             }

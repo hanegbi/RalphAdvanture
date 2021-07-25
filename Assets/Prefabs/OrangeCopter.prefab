@@ -165,9 +165,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  damage: 1
   player: {fileID: 0}
   speed: 20
   timeBetweenAttacks: 3
+  damage: 1
+  pickupChance: 0
+  pickups: []
+  healthPickupChance: 0
+  healthPickup: {fileID: 0}
+  deathEffect: {fileID: 2668783037160578216, guid: 710daffebba296744835a328f7b40dc6, type: 3}
+  deathSound: {fileID: 992154686272190209, guid: 6c2f765c12222e44d9cf9b025012a165, type: 3}
   stopDistance: 10
   attackSpeed: 4

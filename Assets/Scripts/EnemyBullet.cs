@@ -12,10 +12,12 @@ public class EnemyBullet : MonoBehaviour
     public int damage;
 
     public GameObject effect;
+    public GameObject soundObject;
 
     private void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        Instantiate(soundObject, transform.position, transform.rotation);
         targetPosition = playerScript.transform.position;
     }
 
