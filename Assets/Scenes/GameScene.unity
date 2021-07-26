@@ -834,6 +834,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
+    - {fileID: 8100274392836977304, guid: 5a80bc702037c4e408c12926fb83e21d, type: 3}
+    - {fileID: 7100606870510395226, guid: 67e20f2b9254f6d45bbd1992561aec42, type: 3}
+    count: 1
+    timeBetweenSpawns: 4
+  - enemies:
+    - {fileID: -6528216095192705957, guid: 493a2ba2c95b40b4ab7679e04fe77a5f, type: 3}
+    - {fileID: 7100606870510395226, guid: 67e20f2b9254f6d45bbd1992561aec42, type: 3}
+    count: 2
+    timeBetweenSpawns: 3
+  - enemies:
     - {fileID: 5114495435736659308, guid: b1710f22567bca841a80c752c4cb1fe1, type: 3}
     count: 1
     timeBetweenSpawns: 2
@@ -1420,7 +1430,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e1e8670305dd43a458144cf61bbfd166, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.693
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0

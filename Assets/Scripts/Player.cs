@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
     public GameObject dieSound;
 
     public GameObject trail;
-    private float timeBtwTrail;
     public float startTimeBtwTrail;
     public Transform groundPos;
 
@@ -45,16 +44,6 @@ public class Player : MonoBehaviour
         moveAmount = moveInput.normalized * speed;
         if (moveInput != Vector2.zero)
         {
-
-            //if (timeBtwTrail <= 0)
-            //{
-            //    Instantiate(trail, groundPos.position, Quaternion.identity);
-            //    timeBtwTrail = startTimeBtwTrail;
-            //}
-            //else
-            //{
-            //    timeBtwTrail -= Time.deltaTime;
-            //}
             anim.SetBool("isRunning", true);
         }
         else
