@@ -13,30 +13,17 @@ public class Projectile : MonoBehaviour
 
     public GameObject soundObject;
 
-    //public GameObject trail;
-    //private float timeBtwTrail;
-    //public float startTimeBtwTrail;
 
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
         Instantiate(soundObject, transform.position, transform.rotation);
-        //Instantiate(explosion, transform.position, Quaternion.identity);
     }
 
     private void Update()
     {
-
-        //if (timeBtwTrail <= 0)
-        //{
-        //    Instantiate(trail, transform.position, Quaternion.identity);
-        //    timeBtwTrail = startTimeBtwTrail;
-        //}
-        //else
-        //{
-        //    timeBtwTrail -= Time.deltaTime;
-        //}
-
+        Debug.Log(Vector2.up * speed * Time.deltaTime);
+        Debug.Log(Vector2.up);
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
@@ -48,20 +35,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.tag == "Enemy")
         {
             other.GetComponent<Enemy>().TakeDamage(damage);
             DestroyProjectile();
         }
-
-        //    if (other.tag == "boss")
-        //    {
-        //        other.GetComponent<Boss>().TakeDamage(damage);
-        //        DestroyProjectile();
-        //    }
-
-        //}
     }
 
     }

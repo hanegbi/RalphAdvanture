@@ -12,10 +12,10 @@ public class CameraFollow : MonoBehaviour
     public float minY;
     public float maxY;
 
-    //private void Start()
-    //{
-    //    transform.position = playerTransform.position;
-    //}
+    private void Start()
+    {
+        transform.position = playerTransform.position;
+    }
 
     private void LateUpdate()
     {

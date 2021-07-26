@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -14,11 +15,16 @@ public class WaveSpawner : MonoBehaviour
         public float timeBetweenSpawns;
     }
 
+    public string level;
+    public Text textLevel;
+
     public Wave[] waves;
     public Transform[] spawnPoints;
     public float timeBetweenWaves;
 
     private TransitionScene transitionScene;
+
+    public string scene;
 
     private Wave currentWave;
     private int currentWaveIndex;
@@ -26,21 +32,24 @@ public class WaveSpawner : MonoBehaviour
 
     private bool spawningFinished;
 
-    public GameObject boss;
-    public Transform bossSpawnPoint;
-
-    public GameObject healthBar;
 
 
     private void Start()
     {
+        StartCoroutine(ShowMessage(level, 3));
         player = GameObject.FindWithTag("Player").transform;
         StartCoroutine(StartNextWave(currentWaveIndex));
         transitionScene = FindObjectOfType<TransitionScene>();
 
     }
 
-
+    IEnumerator ShowMessage(string message, float delay)
+    {
+        textLevel.text = message;
+        textLevel.enabled = true;
+        yield return new WaitForSeconds(delay);
+        textLevel.enabled = false;
+    }
 
     IEnumerator StartNextWave(int waveIndex)
     {
@@ -89,11 +98,8 @@ public class WaveSpawner : MonoBehaviour
             }
             else
             {
-                Debug.Log("Finish game");
-                transitionScene.LoadScene("Win");
+                transitionScene.LoadScene(scene);
 
-                //Instantiate(boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
-                //healthBar.SetActive(true);
             }
         }
     }
