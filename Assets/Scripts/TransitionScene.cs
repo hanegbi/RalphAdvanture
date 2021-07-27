@@ -22,7 +22,7 @@ public class TransitionScene : MonoBehaviour
     IEnumerator Transition(string scene)
     {
         transAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(scene);
     }
 }

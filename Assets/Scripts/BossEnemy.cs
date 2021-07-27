@@ -29,7 +29,6 @@ public class BossEnemy : RangedBlueCopter
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Instantiate(deathSound, transform.position, transform.rotation);
             Destroy(this.gameObject);
-            healthBar.SetActive(false);
 
         }
     }

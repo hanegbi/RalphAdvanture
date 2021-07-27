@@ -44,11 +44,7 @@ public class HeliSummoner : Enemy
                 if (Time.time >= summonTime)
                 {
                     summonTime = Time.time + timeBetweenSummons;
-                    //anim.SetTrigger("HeliSumm");
-                    Debug.Log("Summon");
                     Instantiate(enemyToSummon, transform.position, transform.rotation);
-
-
                 }
 
             }

@@ -27,9 +27,6 @@ public class Player : MonoBehaviour
     public GameObject hurtSound;
     public GameObject dieSound;
 
-    public GameObject trail;
-    public float startTimeBtwTrail;
-    public Transform groundPos;
 
     private void Start()
     {
